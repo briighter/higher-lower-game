@@ -2,7 +2,7 @@
     max-width: 80%;
     margin: auto;
     position: relative;
-    top: 10%;
+    top: 6%;
 }
 
 .center-text {
@@ -11,4 +11,8 @@
 
 .title-padding {
     padding: .75em;
+}
+
+#title {
+    margin: 0 0 25px;
 }
