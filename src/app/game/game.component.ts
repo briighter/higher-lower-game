@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
   win = false
-  upperLimit = 100
+  upperLmt = 100
   numGuesses = 5
-  
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  getRandomInt(upperLmt) {
+    return Math.floor(Math.random() * Math.floor(upperLmt));
+  }
 }
+
