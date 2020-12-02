@@ -1,0 +1,14 @@
+.card-container {
+    max-width: 80%;
+    margin: auto;
+    position: relative;
+    top: 10%;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.title-padding {
+    padding: .75em;
+}
