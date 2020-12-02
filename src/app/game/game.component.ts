@@ -9,7 +9,7 @@ export class GameComponent implements OnInit {
   win = false
   upperLmt = 100
   numGuesses = 5
-
+  
   constructor() { }
 
   ngOnInit(): void {
