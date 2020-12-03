@@ -16,13 +16,22 @@
 .guess-card {
     color: #000000;
     background-color: #ffffff;
-    max-width: 20em;
+    max-width: 24em;
     margin: 1em auto;
 }
 
 .guess-btn {
-    margin: 0 0 0 1em;
+    margin: 0 auto;
     background-color: #c2185b;
+}
+
+.float-parent {
+    display: flow-root;
+}
+
+.float-child {
+    float: left;
+    padding: 20px;
 }
 
 #title {

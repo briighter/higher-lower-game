@@ -9,12 +9,16 @@
             <img id="emoji" src="./../../assets/thinking-face-emoji.png"><br>
             <span id="game-nbr">0 and {{ upperLmt }}</span>
         </p>
-        <mat-card class="guess-card">
-            <mat-form-field class="mat-focused">
-                <mat-label>Guess Here</mat-label>
-                <input matInput placeholder="Ex. 12" value="">
-            </mat-form-field>
-            <button mat-raised-button class="guess-btn">Guess</button>
+        <mat-card class="guess-card float-parent">
+            <div class="float-child">
+                <mat-form-field class="mat-focused">
+                    <mat-label>Guess Here</mat-label>
+                    <input matInput placeholder="Ex. 12" value="">
+                </mat-form-field>
+            </div>
+            <div class="float-child">
+                <button mat-raised-button class="guess-btn">Guess</button>
+            </div>
         </mat-card>
         <mat-card class="guess-card">
             <mat-card-title class="center-text">Guess History</mat-card-title>
