@@ -1,0 +1,26 @@
+<div class="card-container">
+    <mat-card>
+        <div class="logo-container">
+            <!-- Add Logo Image Here -->
+        </div>
+        <mat-card-title id="title" class="mat-display-2 center-text">Higher or Lower</mat-card-title>
+        <mat-card-subtitle class="mat-display-1 center-text">Can you guess right?</mat-card-subtitle>
+        <p class="mat-display-3 center-text">I am thinking of a number between...<br>
+            <img id="emoji" src="./../../assets/thinking-face-emoji.png"><br>
+            <span id="game-nbr">0 and {{ upperLmt }}</span>
+        </p>
+        <mat-card class="guess-card">
+            <mat-form-field class="mat-focused">
+                <mat-label>Guess Here</mat-label>
+                <input matInput placeholder="Ex. 12" value="">
+            </mat-form-field>
+            <button mat-raised-button class="guess-btn">Guess</button>
+        </mat-card>
+        <mat-card class="guess-card">
+            <mat-card-title class="center-text">Guess History</mat-card-title>
+        </mat-card>
+        <mat-card class="guess-card">
+            <p class="mat-display-1 center-text">Guesses Left: {{ numGuesses }}</p>
+        </mat-card>
+    </mat-card>
+</div>

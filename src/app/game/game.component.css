@@ -1,0 +1,39 @@
+.card-container {
+    max-width: 80%;
+    margin: auto;
+    position: relative;
+    top: 6%;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.title-padding {
+    padding: .75em;
+}
+
+.guess-card {
+    color: #000000;
+    background-color: #ffffff;
+    max-width: 20em;
+    margin: 1em auto;
+}
+
+.guess-btn {
+    margin: 0 0 0 1em;
+    background-color: #c2185b;
+}
+
+#title {
+    margin: 0 0 25px;
+}
+
+#emoji {
+    margin: 0.6em 0 0.6em 0;
+}
+
+#game-nbr {
+    line-height: 1.5em;
+}
+
