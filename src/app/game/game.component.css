@@ -16,7 +16,7 @@
 .guess-card {
     color: #000000;
     background-color: #ffffff;
-    max-width: 24em;
+    max-width: 28em;
     margin: 1em auto;
 }
 
@@ -29,6 +29,10 @@
     margin: 2em auto;
     width: 75%;
     display: block;
+}
+
+.mat-list-item { 
+    color: #000000;
 }
 
 .float-parent {

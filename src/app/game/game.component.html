@@ -32,9 +32,13 @@
         </mat-card>
         <mat-card class="guess-card">
             <mat-card-title class="center-text">Guess History</mat-card-title>
+            <mat-list role="list">
+                <mat-list-item *ngFor="let guess of guessHistory" role="listitem">{{ guess }}</mat-list-item>
+            </mat-list>
         </mat-card>
         <mat-card class="guess-card">
             <p class="mat-display-1 center-text">Guesses Left: {{ numGuesses }}</p>
         </mat-card>
+        <!-- Leader Board Card? -->
     </mat-card>
 </div>
