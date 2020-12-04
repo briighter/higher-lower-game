@@ -25,6 +25,12 @@
     background-color: #c2185b;
 }
 
+.new-game-btn {
+    margin: 2em auto;
+    width: 75%;
+    display: block;
+}
+
 .float-parent {
     display: flow-root;
 }

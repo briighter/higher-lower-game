@@ -9,15 +9,25 @@
             <img id="emoji" src="./../../assets/thinking-face-emoji.png"><br>
             <span id="game-nbr">0 and {{ upperLmt }}</span>
         </p>
+        <mat-card *ngIf="over" class="guess-card">
+            <mat-card-title class="center-text">Oof! Too high.</mat-card-title>
+        </mat-card>
+        <mat-card *ngIf="under" class="guess-card">
+            <mat-card-title class="center-text">Oof! Too Low.</mat-card-title>
+        </mat-card>
+        <mat-card *ngIf="win" class="guess-card">
+            <mat-card-title class="center-text">Holy shit...you beat the odds!<br>Congratulations!</mat-card-title>
+            <button mat-raised-button class="new-game-btn" (click)="newGame()">Play Again :)</button>
+        </mat-card>
         <mat-card class="guess-card float-parent">
             <div class="float-child">
                 <mat-form-field class="mat-focused">
                     <mat-label>Guess Here</mat-label>
-                    <input matInput placeholder="Ex. 12" value="">
+                    <input matInput type="number" placeholder="Ex. 12" [(ngModel)]="guessValue">
                 </mat-form-field>
             </div>
             <div class="float-child">
-                <button mat-raised-button class="guess-btn">Guess</button>
+                <button mat-raised-button class="guess-btn" (click)="checkGuess(guessValue)">Guess</button>
             </div>
         </mat-card>
         <mat-card class="guess-card">
