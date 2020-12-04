@@ -49,16 +49,21 @@ export class GameComponent implements OnInit {
   }
 
   addGuessToHistory(guess) {
-    this.guessHistory.push(guess + ", ");
+    this.guessHistory.push(guess + ", ")
   }
 
   startGame() {
     this.rng = this.getRandomInt(this.upperLmt)
   }
 
+  winGame() {
+    // Add Win Modal
+  }
+
   endGame() {
     this.gameOver = true;
     alert("Game Over XD")
+    // Add End Game Modal
   }
 
   newGame() {

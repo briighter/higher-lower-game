@@ -31,6 +31,10 @@
     display: block;
 }
 
+.mat-list {
+    display: inline-flex;
+}
+
 .mat-list-item { 
     color: #000000;
 }
