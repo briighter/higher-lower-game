@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Congratulations! You did it!</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Thanks for playing!</h3>
+  <p>You playing this game means a lot to me. Building something with my own
+       hands and mind takes a lot of effort so I hope you had a fun and
+        challenging time.</p>
+
+    <!--Add Video Easter Egg -->
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Play Again</button>
+</mat-dialog-actions>

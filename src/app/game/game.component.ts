@@ -1,5 +1,9 @@
+import { isNull } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { range } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { GameOverComponent } from '../game-over/game-over.component';
+import { GameWinComponent } from '../game-win/game-win.component';
 
 @Component({
   selector: 'app-game',
@@ -7,8 +11,7 @@ import { range } from 'rxjs';
   styleUrls: ['./game.component.css']
 })
 export class GameComponent implements OnInit {
-  win = false
-  gameOver = false
+  // win = false
   upperLmt = 100
   numGuesses = 5
   guessValue: number
@@ -17,7 +20,7 @@ export class GameComponent implements OnInit {
   under = false
   guessHistory = []
 
-  constructor() { }
+  constructor(public gameOverDialog: MatDialog, public gameWinDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.startGame()
@@ -29,23 +32,27 @@ export class GameComponent implements OnInit {
   }
 
   checkGuess(guess) {
-    if (this.numGuesses != 0) {
-      if (guess < this.rng) {
-        this.under = true
-        this.over = false
-      } else if (guess > this.rng) {
-        this.over = true
-        this.under = false
-      } else if (guess === this.rng) {
-        this.win = true
-      }
-      this.addGuessToHistory(guess)
-      this.numGuesses--
-      if (this.numGuesses === 0) {
-        this.endGame()
+    if (guess === undefined) {
+      //Do Nothing
+    } else {
+      if (this.numGuesses != 0) {
+        if (guess < this.rng) {
+          this.under = true
+          this.over = false
+        } else if (guess > this.rng) {
+          this.over = true
+          this.under = false
+        } else if (guess === this.rng) {
+          // this.win = true
+          this.winGame()
+        }
+        this.addGuessToHistory(guess)
+        this.numGuesses--
+        if (this.numGuesses === 0) {
+          this.gameOver()
+        }
       }
     }
-
   }
 
   addGuessToHistory(guess) {
@@ -57,20 +64,29 @@ export class GameComponent implements OnInit {
   }
 
   winGame() {
-    // Add Win Modal
-  }
+    this.gameWinDialog.open(GameWinComponent , {
+      height: '600px',
+      width: '480px',
+    }).afterClosed().subscribe(result => {
+      this.newGame()
+    })  }
 
-  endGame() {
-    this.gameOver = true;
-    alert("Game Over XD")
-    // Add End Game Modal
+  gameOver() {
+    this.gameOverDialog.open(GameOverComponent , {
+      height: '600px',
+      width: '480px',
+    }).afterClosed().subscribe(result => {
+      this.newGame()
+    })
   }
 
   newGame() {
     this.over = false
     this.under = false
-    this.win = false
-    // Clear Guess History Here Also
+    // this.win = false
+    this.guessHistory = []
+    this.numGuesses = 5
+    this.guessValue = undefined
     this.startGame()
     alert(this.rng) // Remove when done
   }
