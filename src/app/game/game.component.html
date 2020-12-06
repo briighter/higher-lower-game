@@ -15,10 +15,6 @@
         <mat-card *ngIf="under" class="guess-card">
             <mat-card-title class="center-text">Oof! Too Low.</mat-card-title>
         </mat-card>
-        <!-- <mat-card *ngIf="win" class="guess-card">
-            <mat-card-title class="center-text">Holy shit...you beat the odds!<br>Congratulations!</mat-card-title>
-            <button mat-raised-button class="new-game-btn" (click)="newGame()">Play Again :)</button>
-        </mat-card> -->
         <mat-card class="guess-card float-parent">
             <div class="float-child">
                 <mat-form-field class="mat-focused">
@@ -36,6 +32,7 @@
                 <mat-list-item *ngFor="let guess of guessHistory" role="listitem">{{ guess }}</mat-list-item>
             </mat-list>
         </mat-card>
+        <mat-progress-bar class="progress-bar" mode="determinate" value="{{progressBarVal}}"></mat-progress-bar>
         <mat-card class="guess-card" id="guess-left">
             <p class="mat-display-1 center-text">Guesses Left: {{ numGuesses }}</p>
         </mat-card>

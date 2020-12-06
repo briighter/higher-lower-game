@@ -11,7 +11,6 @@ import { GameWinComponent } from '../game-win/game-win.component';
   styleUrls: ['./game.component.css']
 })
 export class GameComponent implements OnInit {
-  // win = false
   upperLmt = 100
   numGuesses = 5
   guessValue: number
@@ -19,6 +18,8 @@ export class GameComponent implements OnInit {
   over = false
   under = false
   guessHistory = []
+  progressBarVal = 0
+  progressInc = 100/this.numGuesses
 
   constructor(public gameOverDialog: MatDialog, public gameWinDialog: MatDialog) { }
 
@@ -43,11 +44,11 @@ export class GameComponent implements OnInit {
           this.over = true
           this.under = false
         } else if (guess === this.rng) {
-          // this.win = true
           this.winGame()
         }
         this.addGuessToHistory(guess)
         this.numGuesses--
+        this.progressBarVal+= this.progressInc
         if (this.numGuesses === 0) {
           this.gameOver()
         }
@@ -69,7 +70,8 @@ export class GameComponent implements OnInit {
       width: '480px',
     }).afterClosed().subscribe(result => {
       this.newGame()
-    })  }
+    })  
+  }
 
   gameOver() {
     this.gameOverDialog.open(GameOverComponent , {
@@ -83,9 +85,9 @@ export class GameComponent implements OnInit {
   newGame() {
     this.over = false
     this.under = false
-    // this.win = false
     this.guessHistory = []
     this.numGuesses = 5
+    this.progressBarVal = 0
     this.guessValue = undefined
     this.startGame()
     alert(this.rng) // Remove when done
