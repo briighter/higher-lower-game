@@ -25,7 +25,6 @@ export class GameComponent implements OnInit {
 
   ngOnInit(): void {
     this.startGame()
-    alert(this.rng) // Remove when done
   }
 
   getRandomInt(upperLmt) {
@@ -90,7 +89,6 @@ export class GameComponent implements OnInit {
     this.progressBarVal = 0
     this.guessValue = undefined
     this.startGame()
-    alert(this.rng) // Remove when done
   }
 }
 
